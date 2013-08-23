@@ -4,19 +4,17 @@ PATH=$PATH:/home/sircmpwn/:/home/sircmpwn/bin:/opt/android-sdk/platform-tools:/h
 PROMPT_COMMAND=__prompt_command
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ ⎇  \1/'
 }
 
 function __prompt_command() {
-    EXIT="$?"
-    export PS1="\@ \[$(tput bold)\][\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \w] \[$(tput setaf 1)\]\[\$(parse_git_branch)\]\[$(tput sgr0)\]"
-    if [ $EXIT != 0 ]; then
-        PS1+="$(tput setaf 1)$(tput bold)$EXIT$(tput sgr0)"
-    fi
-    PS1+="\$ \[$(tput sgr0)\]"
+    export PS1="┌─[\@]─\
+$([[ $? != 0 ]] && echo $(tput setaf 1)[✗]$(tput sgr0)─)\
+\[$(tput bold)\][\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\
+\[$(tput setaf 7)\] \w]\
+\[$(tput setaf 1)\]\[\$(parse_git_branch)\]\[$(tput sgr0)\]\
+\n└──╼\$ \[$(tput sgr0)\]"
 }
-
-export PS1="\@ \[$(tput bold)\][\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \w] \[$(tput setaf 1)\]\[\$(parse_git_branch)\]\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
 
 homeSpace=$(df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
 dataSpace=$(df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
