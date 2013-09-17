@@ -112,7 +112,7 @@
 [HexChat]
     appname = HexChat
     timeout = 0
-    background = "#99FF33"
+    background = "#94DBFF"
     foreground = "#000000"
 
 [test]

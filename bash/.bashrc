@@ -1,6 +1,6 @@
 [ -z "$PS1" ] && return
 
-PATH=$PATH:/home/sircmpwn/:/home/sircmpwn/bin:/opt/android-sdk/platform-tools:/home/sircmpwn/.gem/ruby/2.0.0/bin
+PATH=$PATH:/home/sircmpwn/:/home/sircmpwn/bin:/opt/android-sdk/platform-tools:/home/sircmpwn/.gem/ruby/2.0.0/bin:/home/sircmpwn/dotfiles/scripts/
 PROMPT_COMMAND=__prompt_command
 
 parse_git_branch() {
