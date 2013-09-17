@@ -191,7 +191,7 @@ AutoNext = yes
 #
 # Example:    Theme = laras_theme
 #
-Theme = nightly_theme
+Theme = transparent-background
 
 # The theme used when running on an xterm.
 #
