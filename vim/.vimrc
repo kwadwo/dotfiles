@@ -4,15 +4,18 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Bundles
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
+" /Bundles
 
 filetype plugin indent on
 
 set laststatus=2
 set t_Co=256
+" Configure airline to look pretty
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_linecolumn_prefix = '␊ '
@@ -31,10 +34,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set magic
+set magic " unbreak vim's regex implementation
 
 set number
-set relativenumber
 set scrolloff=3
 
 set ttyfast
@@ -44,25 +46,24 @@ set nowrap
 set ignorecase
 set smartcase
 
+" Search as you type, highlight results
 set incsearch
 set showmatch
 set hlsearch
 
 syntax on
 let mapleader = ","
-nnoremap <leader>l :tabNext<cr>
-nnoremap <leader>h :tabprevious<cr>
-nnoremap \<space> :noh<cr>
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap \<space> :noh<cr> " Clear higlighting
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
 inoremap jj <ESC>
 nnoremap <tab> %
 vnoremap <tab> %
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-nnoremap <leader>ft Vatzf
+nnoremap <leader>ft Vatzf " Reselect pasted text
 inoremap <C-c> <ESC>
 inoremap <C-c>h 4h4x
-vnoremap < <gv
-vnoremap > >gv
-cmap w!! %!sudo tee > /dev/null %
+vnoremap < <gv " Reselect scooted lines
+vnoremap > >gv " !!
+cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root
