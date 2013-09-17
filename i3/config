@@ -106,8 +106,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # vim-style window manipulation
 mode "window" {
-        bindsym s split v
-        bindsym v split h
+        bindsym s split v; mode "default"
+        bindsym v split h; mode "default"
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -129,6 +129,9 @@ bindsym $mod+w mode "window"
 bar {
         status_command i3status
         tray_output primary
+        colors {
+            background #181818
+        }
 }
 
 bindsym $mod+Pause exec i3lock -i /home/sircmpwn/wallpaper.png -t
