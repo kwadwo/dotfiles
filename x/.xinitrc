@@ -6,5 +6,6 @@ export XDG_CONFIG_HOME='/home/sircmpwn/.config'
 source /etc/X11/xinit/xinitrc.d/30-dbus
 export EDITOR=vim
 export TERM=terminator
-eval $(pulseaudio --start)
-exec awesome
+exec volumeicon &
+#exec awesome
+exec i3
