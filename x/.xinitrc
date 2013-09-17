@@ -7,5 +7,7 @@ source /etc/X11/xinit/xinitrc.d/30-dbus
 export EDITOR=vim
 export TERMINAL=terminator
 exec volumeicon &
+exec dunst &
+exec xcompmgr -c &
 #exec awesome
 exec i3
