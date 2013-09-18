@@ -27,7 +27,8 @@ yaourt --noconfirm -S irssi jhead jre7-openjdk lxappearance mediainfo mono monod
 yaourt --noconfirm -S moc nodejs openssh pinta python python2 qemu qtcreator
 yaourt --noconfirm -S rdesktop redis rsync scrot sl subversion terminator thunar thunderbird
 yaourt --noconfirm -S tmux transmission-qt unrar unzip vim-runtime vlc wine winetricks
-yaourt --noconfirm -S wirechark-cli wireshark-gtk xbmc xclip xcompmgr xorg-server zip
+yaourt --noconfirm -S wirechark-cli wireshark-gtk xbmc xclip xcompmgr xorg-server volumeicon
+yaourt --noconfirm -S zip
 # Set up vim
 git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 vim +BundleInstall +qall
