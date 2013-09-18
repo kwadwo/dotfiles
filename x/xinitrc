@@ -8,6 +8,6 @@ export EDITOR=vim
 export TERMINAL=terminator
 exec volumeicon &
 exec dunst &
-exec xcompmgr -c &
-#exec awesome
+exec xcompmgr &
+exec xset s off
 exec i3
