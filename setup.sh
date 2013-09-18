@@ -1,16 +1,14 @@
 #!/bin/sh
-USER=$(whoami)
-HOME=/home/$USER
-WD=$(pwd)
+wd=$(pwd)
 # Make configuration files
 mkdir -p $HOME/.vim $HOME/.i3 $HOME/.config/moc $HOME/.config/i3status $HOME/dunst
-ln -s $WD/vim/vim $HOME/.vim
-ln -s $WD/vim/vimrc $HOME/.vimrc
-ln -s $WD/bash/bashrc $HOME/.bashrc
-ln -s $WD/x/xinitrc $HOME/.xinitrc
-ln -s $WD/i3/config $HOME/.i3/config
-ln -s $WD/i3/i3status $HOME/.config/i3status/config
-ln -s $WD/dunst/dunstrc $HOME/.config/dunst/dunstrc
+ln -s $wd/vim/vim $HOME/.vim
+ln -s $wd/vim/vimrc $HOME/.vimrc
+ln -s $wd/bash/bashrc $HOME/.bashrc
+ln -s $wd/x/xinitrc $HOME/.xinitrc
+ln -s $wd/i3/config $HOME/.i3/config
+ln -s $wd/i3/i3status $HOME/.config/i3status/config
+ln -s $wd/dunst/dunstrc $HOME/.config/dunst/dunstrc
 # Install software
 sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm -S base-devel
