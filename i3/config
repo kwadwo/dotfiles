@@ -153,3 +153,6 @@ exec --no-startup-id i3-msg 'workspace 4; exec terminator -e mocp'
 assign [class="xbmc"] 4
 for_window [class="xbmc"] floating enable
 for_window [class="xbmc"] fullscreen
+for_window [title="Thomas Was Alone"] floating enable
+for_window [title="Thomas Was Alone"] fullscreen
+for_window [title="Super Hexagon"] floating enable
