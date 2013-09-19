@@ -1,5 +1,6 @@
 #!/bin/sh
 export TERMINAL=terminator
+PATH=$PATH:/home/sircmpwn/:/home/sircmpwn/bin:/home/sircmpwn/sources/dotfiles/scripts/
 exec volumeicon &
 exec dunst &
 exec xcompmgr &
