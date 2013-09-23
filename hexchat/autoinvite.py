@@ -25,8 +25,8 @@ __module_description__ = "Automatically accepts invites"
  
 import xchat
  
-aa_nick = ['First', 'Second', 'Third']
-aa_chan = ['One', 'Two', 'Three']
+aa_nick = []
+aa_chan = ['botwar','#botwar']
  
  
 def chan_invite(word, word_eol, _):

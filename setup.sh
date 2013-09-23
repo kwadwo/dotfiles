@@ -1,7 +1,7 @@
 #!/bin/sh
 wd=$(pwd)
 # Make configuration files
-mkdir -p $HOME/.vim $HOME/.i3 $HOME/.config/moc $HOME/.config/i3status $HOME/dunst
+mkdir -p $HOME/.vim $HOME/.i3 $HOME/.config/moc $HOME/.config/i3status $HOME/dunst $HOME/hexchat/addons
 ln -s $wd/vim/vim $HOME/.vim
 ln -s $wd/vim/vimrc $HOME/.vimrc
 ln -s $wd/bash/bashrc $HOME/.bashrc
@@ -9,6 +9,7 @@ ln -s $wd/x/xinitrc $HOME/.xinitrc
 ln -s $wd/i3/config $HOME/.i3/config
 ln -s $wd/i3/i3status $HOME/.config/i3status/config
 ln -s $wd/dunst/dunstrc $HOME/.config/dunst/dunstrc
+ln -s $wd/hexchat/autoinvite.py $HOME/.config/hexchat/addons/autoinvite.py
 # Install software
 sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm -S base-devel
