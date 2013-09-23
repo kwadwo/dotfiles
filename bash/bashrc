@@ -2,6 +2,7 @@
 
 EDITOR=vim
 PROMPT_COMMAND=__prompt_command
+PATH=$PATH:/opt/android-sdk/platform-tools/:~/.gem/ruby/2.0.0/bin
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ ⎇  \1/'
