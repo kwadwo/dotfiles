@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+json=$(curl -s -F "file=@$1" https://mediacru.sh/api/upload/file)
+hash=$(echo "$json" | grep "hash" | cut -d '"' -f4)
+echo "https://mediacru.sh/$hash"
