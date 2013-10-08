@@ -138,9 +138,9 @@ bindsym $mod+Pause exec i3lock -i /home/sircmpwn/wallpaper.png -t
 
 # Set workspaces on certain monitors
 workspace 1 output DVI-I-1
-workspace 2 output DP-0
+workspace 2 output DVI-I-1
 workspace 3 output DVI-D-0
-workspace 4 output HDMI-0
+workspace 4 output DVI-D-0
 
 # Startup apps
 exec --no-startup-id sh ~/.fehbg
@@ -150,7 +150,6 @@ exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 4; exec terminator -e mocp'
 
 # Forcibly positioning certain apps
-assign [class="xbmc"] 4
 for_window [class="xbmc"] floating enable
 for_window [class="xbmc"] fullscreen
 for_window [title="Thomas Was Alone"] floating enable

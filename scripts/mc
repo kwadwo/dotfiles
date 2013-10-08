@@ -1,5 +1,75 @@
-#!/bin/sh
-set -e
-json=$(curl -s -F "file=@$1" https://mediacru.sh/api/upload/file)
-hash=$(echo "$json" | grep "hash" | cut -d '"' -f4)
-echo "https://mediacru.sh/$hash"
+#!/bin/bash
+
+# MediaCrush (https://mediacru.sh) uploader
+# Jerome Leclanche <jerome.leclanche+mediacrush@gmail.com>
+
+SERVER="https://mediacru.sh"
+RECURSIVE=false
+
+usage() {
+    cat << EOF
+usage: $(basename $0) [-r] [-s SERVER] [FILES ...]
+Upload files to https://mediacru.sh
+
+  -r            recursively upload directories
+  -s SERVER     specify a different server to upload to (default: https://mediacru.sh)
+  -h            display this help and exit
+EOF
+}
+
+err() {
+    echo
+    echo "$@" 1>&2
+}
+
+
+while getopts "h?rs:" OPTION; do
+    case $OPTION in
+        h|\?)
+            usage
+            exit
+            ;;
+        r)
+            RECURSIVE=true
+            ;;
+        s)
+            SERVER=$OPTARG
+            ;;
+    esac
+done
+shift "$((OPTIND - 1))"
+
+upload() {
+    for f in $@; do
+
+        if [[ -d "$f" ]]; then
+            if [[ $RECURSIVE == true ]]; then
+                upload "$f/*"
+            else
+                err "omitting directory: $f"
+                continue
+            fi
+        fi
+
+        echo -n "Uploading $f ..."
+        url="$SERVER/api/upload/file"
+        out=$(curl --silent -F "file=@$f" "$url")
+
+        if [[ $? -ne 0 ]]; then
+            err "Could not upload to $url"
+            continue
+        fi
+
+        hash=$(echo $out | sed -nre 's#.*"hash": "([^"]+)".*#\1#p')
+        error=$(echo $out | sed -nre 's#.*"error": ([0-9]+) .*#\1#p')
+
+        if [[ $error == "415" ]]; then
+            type=$(file --mime "$f")
+            err "The file type for $type is not supported"
+        fi
+
+        echo -e "\r\033[KUploaded:" $SERVER/$hash
+    done
+}
+
+upload $@
