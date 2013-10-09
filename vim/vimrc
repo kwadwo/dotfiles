@@ -64,6 +64,4 @@ vnoremap <F1> <ESC>
 nnoremap <leader>ft Vatzf " Reselect pasted text
 inoremap <C-c> <ESC>
 inoremap <C-c>h 4h4x
-vnoremap < <gv " Reselect scooted lines
-vnoremap > >gv " !!
 cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root

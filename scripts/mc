@@ -22,6 +22,10 @@ err() {
     echo "$@" 1>&2
 }
 
+if [[ $# -eq 0 ]]; then
+    usage
+    exit 1
+fi
 
 while getopts "h?rs:" OPTION; do
     case $OPTION in
@@ -40,7 +44,7 @@ done
 shift "$((OPTIND - 1))"
 
 upload() {
-    for f in $@; do
+    for f in "$@"; do
 
         if [[ -d "$f" ]]; then
             if [[ $RECURSIVE == true ]]; then
@@ -72,4 +76,4 @@ upload() {
     done
 }
 
-upload $@
+upload "$@"
