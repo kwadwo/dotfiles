@@ -17,7 +17,7 @@ font pango:DejaVu Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec sakura
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,7 +147,7 @@ exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec hexchat'
 exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 4; exec terminator -e mocp'
+exec --no-startup-id i3-msg 'workspace 4; exec sakura -e mocp'
 
 # Forcibly positioning certain apps
 for_window [class="xbmc"] floating enable
@@ -155,4 +155,3 @@ for_window [class="xbmc"] fullscreen
 for_window [title="Thomas Was Alone"] floating enable
 for_window [title="Thomas Was Alone"] fullscreen
 for_window [title="Super Hexagon"] floating enable
-for_window [title="Katawa Shoujo"] floating enable
