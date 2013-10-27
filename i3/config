@@ -145,9 +145,10 @@ workspace 4 output DVI-D-0
 # Startup apps
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec hexchat'
-exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 4; exec sakura -e mocp'
+exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace 3; exec hexchat'
+exec --no-startup-id i3-msg 'workspace 4; exec bash -c "sleep 2 && sakura -x mocp"'
+exec --no-startup-id bash -c "sleep 3 && mocp -p"
 
 # Forcibly positioning certain apps
 for_window [class="xbmc"] floating enable
