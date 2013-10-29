@@ -19,6 +19,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec sakura
 
+# volume controls
+bindsym $mod+KP_Add exec pa-adjust plus
+bindsym $mod+KP_Subtract exec pa-adjust minus
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
