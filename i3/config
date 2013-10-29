@@ -127,7 +127,7 @@ bindsym $mod+w mode "window"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command custom_statusbar
         tray_output primary
         colors {
             background #181818
@@ -156,3 +156,4 @@ for_window [class="xbmc"] fullscreen
 for_window [title="Thomas Was Alone"] floating enable
 for_window [title="Thomas Was Alone"] fullscreen
 for_window [title="Super Hexagon"] floating enable
+for_window [class="Wine"] floating enable
