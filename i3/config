@@ -29,6 +29,9 @@ bindsym XF86AudioPrev exec mocp --previous
 bindsym XF86AudioPlay exec mocp --toggle-pause
 bindsym XF86AudioNext exec mocp --next
 
+# etc controls
+bindsym Print exec scrush
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
