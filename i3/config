@@ -20,14 +20,14 @@ floating_modifier $mod
 bindsym $mod+Return exec sakura
 
 # volume controls
-bindsym $mod+F1 exec pa-adjust mute
-bindsym $mod+F2 exec pa-adjust minus
-bindsym $mod+F3 exec pa-adjust plus
+bindsym XF86AudioMute exec pa-adjust mute
+bindsym XF86AudioLowerVolume exec pa-adjust minus
+bindsym XF86AudioRaiseVolume exec pa-adjust plus
 
 # music controls
-bindsym $mod+F5 exec mocp --previous
-bindsym $mod+F6 exec mocp --toggle-pause
-bindsym $mod+F7 exec mocp --next
+bindsym XF86AudioPrev exec mocp --previous
+bindsym XF86AudioPlay exec mocp --toggle-pause
+bindsym XF86AudioNext exec mocp --next
 
 # kill focused window
 bindsym $mod+Shift+q kill
