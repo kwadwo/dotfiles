@@ -20,8 +20,14 @@ floating_modifier $mod
 bindsym $mod+Return exec sakura
 
 # volume controls
-bindsym $mod+KP_Add exec pa-adjust plus
-bindsym $mod+KP_Subtract exec pa-adjust minus
+bindsym $mod+F1 exec pa-adjust mute
+bindsym $mod+F2 exec pa-adjust minus
+bindsym $mod+F3 exec pa-adjust plus
+
+# music controls
+bindsym $mod+F5 exec mocp --previous
+bindsym $mod+F6 exec mocp --toggle-pause
+bindsym $mod+F7 exec mocp --next
 
 # kill focused window
 bindsym $mod+Shift+q kill
