@@ -11,6 +11,7 @@ ln -s $wd/i3/i3status $HOME/.config/i3status/config
 ln -s $wd/dunst/dunstrc $HOME/.config/dunst/dunstrc
 ln -s $wd/hexchat/autoinvite.py $HOME/.config/hexchat/addons/autoinvite.py
 ln -s $wd/fish/config.fish $HOME/.config/fish/config.fish
+ln -s $wd/scripts/keybindings $home/.keybindings
 # Install software
 sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm -S base-devel
@@ -30,7 +31,7 @@ yaourt --noconfirm -S moc nodejs openssh pinta python python2 qemu qtcreator
 yaourt --noconfirm -S rdesktop redis rsync scrot sl subversion terminator thunar thunderbird
 yaourt --noconfirm -S tmux transmission-qt unrar unzip vim-runtime vlc wine winetricks
 yaourt --noconfirm -S wirechark-cli wireshark-gtk xbmc xclip xcompmgr xorg-server volumeicon
-yaourt --noconfirm -S zip fish
+yaourt --noconfirm -S zip fish xorg-xmodmap
 # Set up vim
 git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 vim +BundleInstall +qall
