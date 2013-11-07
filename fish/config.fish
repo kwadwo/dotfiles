@@ -38,3 +38,4 @@ function fish_prompt --description 'Write out the prompt'
 
     end
 end
+psql -At -d bash -c "SELECT text FROM quotes OFFSET random()*(SELECT COUNT(*) FROM quotes) LIMIT 1"
