@@ -3,7 +3,7 @@ while :
 do
     nowplaying=$(basename "$(mocp -i | grep File | sed -re "s/.*: (.*)\$/\1/")" | sed -r "s/(\.flac|\.mp3)//")
     output="$nowplaying | "
-    output="$output BTC: \$$(curl -s https://www.bitstamp.net/api/ticker/ | jsawk 'return this.last') | "
+    output="$output BTC: \$$(curl -s https://coinbase.com/api/v1/prices/buy | jsawk 'return this.subtotal.amount') | "
     homeSpace=$(df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
     dataSpace=$(df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
     output="$output home: $homeSpace | "
