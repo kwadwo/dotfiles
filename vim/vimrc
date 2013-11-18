@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'Valloric/YouCompleteMe'
 " /Bundles
 
 filetype plugin indent on
@@ -55,7 +56,6 @@ syntax on
 let mapleader = ","
 nnoremap \<space> :noh<cr> " Clear higlighting
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
-inoremap jj <ESC>
 nnoremap <tab> %
 vnoremap <tab> %
 inoremap <F1> <ESC>
