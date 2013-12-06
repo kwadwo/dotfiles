@@ -1,5 +1,5 @@
 #!/bin/sh
-export TERMINAL=terminator
+export TERMINAL=sakura
 PATH=$PATH:/home/sircmpwn/:/home/sircmpwn/bin:/home/sircmpwn/sources/dotfiles/scripts/
 source /etc/X11/xinit/xinitrc.d/30-dbus
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
