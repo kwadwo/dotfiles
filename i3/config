@@ -147,7 +147,7 @@ bar {
         }
 }
 
-bindsym $mod+Pause exec i3lock -i /home/sircmpwn/wallpaper.png -t
+bindsym $mod+Pause exec lock-system
 
 # Set workspaces on certain monitors
 workspace 1 output DVI-D-0
@@ -156,7 +156,7 @@ workspace 3 output DVI-I-1
 workspace 4 output DVI-I-1
 
 # Startup apps
-exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id sh ~/fehbg
 exec --no-startup-id xmodmap ~/.keybindings
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
