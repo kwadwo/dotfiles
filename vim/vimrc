@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set shell=bash
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -9,7 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'kchmck/vim-coffee-script'
 " /Bundles
 
 filetype plugin indent on
