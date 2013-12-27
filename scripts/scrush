@@ -3,4 +3,6 @@ set -e
 scrot -s /tmp/scrot.png;
 json=$(curl -F file=@/tmp/scrot.png https://mediacru.sh/api/upload/file)
 hash=$( echo "$json" | grep "hash" | cut -d '"' -f4)
+echo -n https://mediacru.sh/$hash | xclip -sel clip
+notify-send "Upload complete: https://mediacru.sh/$hash"
 xdg-open https://mediacru.sh/$hash
