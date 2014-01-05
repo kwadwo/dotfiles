@@ -11,6 +11,7 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-sleuth'
 " /Bundles
 
 filetype plugin indent on
