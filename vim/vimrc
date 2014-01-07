@@ -71,3 +71,4 @@ cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root
 " Various file formats
 autocmd FileType c setlocal noet ts=4 sw=4
 autocmd FileType s setlocal noet ts=4 sw=4
+autocmd FileType go setlocal noet ts=4 sw=4
