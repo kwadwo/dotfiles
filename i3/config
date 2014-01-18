@@ -164,7 +164,7 @@ exec --no-startup-id xmodmap ~/.keybindings
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec bash -c "sleep 2 && sakura -x mocp"'
 exec --no-startup-id i3-msg 'workspace 3; exec sakura -x weechat'
-exec --no-startup-id i3-msg 'workspace 4; exec sakura -x thunderbird'
+exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
 
 # Forcibly positioning certain apps
 for_window [class="xbmc"] floating enable

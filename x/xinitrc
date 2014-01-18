@@ -9,4 +9,5 @@ exec dunst &
 exec xcompmgr &
 exec pulseaudio --start &
 exec pasystray &
+exec irexec &
 exec i3

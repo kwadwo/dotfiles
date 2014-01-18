@@ -54,6 +54,10 @@ set incsearch
 set showmatch
 set hlsearch
 
+" Don't litter swp files everywhere
+set backupdir=~/.vim/.backup
+set directory=~/.vim/.backup
+
 syntax on
 let mapleader = ","
 nnoremap \<space> :noh<cr> " Clear higlighting
