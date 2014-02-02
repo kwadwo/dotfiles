@@ -36,7 +36,15 @@ while true
     info "♫" (get_nowplaying)
     info "✔ home" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
     info "✔ sda1" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
-    set line $line (date +"%Y-%m-%d %l:%M %p")
+
+    set datesymbol ""
+    if test (date +"%H") -lt 6
+        set datesymbol "☾"
+    end
+    if test (date +"%H") -gt 19; or true
+        set datesymbol "☾"
+    end
+    set line $line (date +"$datesymbol %Y-%m-%d %l:%M %p")
 
     echo $line
     sleep 5
