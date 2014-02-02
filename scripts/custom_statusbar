@@ -18,10 +18,10 @@ function get_downloading
     echo $incomplete
 end
 function get_nowplaying
-    if mocp -i | grep -E "SongTitle: .+" > /dev/null
-        set title (mocp -i | grep "SongTitle" | sed -re "s/SongTitle: (.*)/\1/")
+    if mocp -i | grep -E "^Title: .+" > /dev/null
+        set title (mocp -i | grep -E "^Title" | sed -re "s/Title: (.*)/\1/")
     else
-        set title (basename (mocp -i | grep File | sed -re "s/.*: (.*)\$/\1/") | sed -r "s/(\.flac|\.mp3)//")
+        set title (basename (mocp -i | grep "File" | sed -re "s/File: (.*)\$/\1/") | sed -r "s/(\.flac|\.mp3)//")
     end
     echo -n $title
 end
