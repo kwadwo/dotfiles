@@ -1,13 +1,16 @@
 #!/usr/bin/fish
+set line ""
 function info
-    echo -n $argv
-    echo -n " | "
+    set line $line $argv
+    set line $line "|"
 end
 while true
     info (basename (mocp -i | grep File | sed -re "s/.*: (.*)\$/\1/") | sed -r "s/(\.flac|\.mp3)//")
     info "home:" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
     info "sda1:" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
-    echo -n (date +"%Y-%m-%d %l:%M %p")
+    set line $line (date +"%Y-%m-%d %l:%M %p")
+
+    echo $line
     sleep 5
-    echo -ne "\n"
+    set line ""
 end

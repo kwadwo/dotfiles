@@ -1,2 +1,6 @@
 #!/bin/bash
-mv "$1" ~/torrents/
+if [[ $1 == *.torrent ]]
+then
+  notify-send "Added $(basename "$1") to rTorrent"
+  mv "$1" ~/torrents/
+fi
