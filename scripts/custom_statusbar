@@ -22,8 +22,8 @@ while true
     if test $torrents -eq 1
         info "Downloading" $torrents "torrent"
     end
-    if test $torrents -eq 0
-        info "Downloading" $torrents "torrent"
+    if test $torrents -ne 0
+        info "Downloading" $torrents "torrents"
     end
 
     info (basename (mocp -i | grep File | sed -re "s/.*: (.*)\$/\1/") | sed -r "s/(\.flac|\.mp3)//")
