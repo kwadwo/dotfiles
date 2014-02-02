@@ -1,0 +1,2 @@
+#!/bin/bash
+sakura -e "tmux attach -t rt"
