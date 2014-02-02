@@ -28,14 +28,14 @@ end
 while true
     set torrents (get_downloading)
     if test $torrents -eq 1
-        info "Downloading" $torrents "torrent"
+        info "✔ Downloading" $torrents "torrent"
     else if test $torrents -ne 0
-        info "Downloading" $torrents "torrents"
+        info "✔ Downloading" $torrents "torrents"
     end
 
-    info (get_nowplaying)
-    info "home:" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
-    info "sda1:" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
+    info "♫" (get_nowplaying)
+    info "✔ home" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
+    info "✔ sda1" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
     set line $line (date +"%Y-%m-%d %l:%M %p")
 
     echo $line
