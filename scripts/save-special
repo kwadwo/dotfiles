@@ -4,3 +4,8 @@ then
   notify-send "Added $(basename "$1") to rTorrent"
   mv "$1" ~/torrents/
 fi
+if [[ $1 == magnet:* ]]
+then
+  notify-send "Added magnet link to rTorrent"
+  xmlrpc local.rtorrent load_start "$1"
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -ou $LOGNAME i3)/environ)";
+/usr/bin/notify-send "Torrent complete:\n$1"
