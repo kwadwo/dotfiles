@@ -28,9 +28,9 @@ end
 while true
     set torrents (get_downloading)
     if test $torrents -eq 1
-        info "✔ Downloading" $torrents "torrent"
+        info "▼ Downloading" $torrents "torrent"
     else if test $torrents -ne 0
-        info "✔ Downloading" $torrents "torrents"
+        info "▼ Downloading" $torrents "torrents"
     end
 
     info "♫" (get_nowplaying)
