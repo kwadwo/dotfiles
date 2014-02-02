@@ -21,8 +21,7 @@ while true
     set torrents (get_downloading)
     if test $torrents -eq 1
         info "Downloading" $torrents "torrent"
-    end
-    if test $torrents -ne 0
+    else if test $torrents -ne 0
         info "Downloading" $torrents "torrents"
     end
 
