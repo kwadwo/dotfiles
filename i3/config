@@ -81,8 +81,8 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+c reload
     # restart i3 inplace with mod+shift+r
     bindsym $mod+Shift+r restart
-    # exit i3 with mod+shift+e TODO: Use something less shitty for confirmation message
-    bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'" 
+    # exit i3 with mod+shift+e
+    bindsym $mod+Shift+e exec bash -c "gdialog --yesno 'Are you sure you want to exit i3?' 0 0 && i3-msg exit"
     # Run terminal with mod+enter
     bindsym $mod+Return exec sakura
     # dmenu with mod+d for arbituary programs
