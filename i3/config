@@ -101,6 +101,8 @@ font pango:DejaVu Sans Mono 9
     bindsym XF86AudioNext exec mocp --next
     # i3-lock on mod+pause
     bindsym $mod+Pause exec lock-system
+    # Cycle through border styles with mod+b
+    bindsym $mod+b border toggle
 
 # Status bar uses custom script
 bar {
@@ -110,6 +112,12 @@ bar {
             background #181818
         }
 }
+
+# Some simple personal preferences
+hide_edge_borders both
+workspace_layout stacked
+workspace_auto_back_and_forth yes
+new_window 1pixel
 
 # Set default workspaces on specific displays
 workspace 1 output HDMI-0
