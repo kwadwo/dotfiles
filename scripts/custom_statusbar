@@ -2,7 +2,7 @@
 set line ""
 function info
     set line $line $argv
-    set line $line "⋯"
+    set line $line "|"
 end
 function get_torrents
     xmlrpc local.rtorrent download_list | grep "String" | sed -re "s/.*String: '([0-9A-F]+)'/\1/"
@@ -25,6 +25,12 @@ function get_nowplaying
     end
     echo -n $title
 end
+function moc_is_playing
+    if mocp -i | grep -E "^State: STOP\$" > /dev/null
+        return 1
+    end
+    return 0
+end
 while true
     set torrents (get_downloading)
     if test $torrents -eq 1
@@ -33,7 +39,9 @@ while true
         info "▼ Downloading" $torrents "torrents"
     end
 
-    info "♫" (get_nowplaying)
+    if moc_is_playing
+        info "♫" (get_nowplaying)
+    end
     info "✔ home" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
     info "✔ sda1" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
 
