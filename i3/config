@@ -126,7 +126,7 @@ workspace 3 output DVI-I-1
 workspace 4 output DVI-I-1
 
 # Start these things when I log in, on specific workspaces
-exec --no-startup-id sh ~/fehbg
+exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id xmodmap ~/.keybindings
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec bash -c "sleep 2 && sakura -x mocp"'
