@@ -85,6 +85,10 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+e exec bash -c "gdialog --yesno 'Are you sure you want to exit i3?' 0 0 && i3-msg exit"
     # Run terminal with mod+enter
     bindsym $mod+Return exec sakura
+    # Screenshot -> mediacrush with mod+s
+    bindsym $mod+s exec sleep 0.1 && scrush
+    # Screenshot -> ~/screenshots with mod+shift+s
+    bindsym $mod+Shift+s exec sleep 0.1 && takeselection
     # dmenu with mod+d for arbituary programs
     bindsym $mod+d exec dmenu_run
     # volume controls (special keys on keyboard)
