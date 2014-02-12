@@ -40,6 +40,7 @@ set autoindent
 set magic " unbreak vim's regex implementation
 
 set number
+set relativenumber
 set scrolloff=3
 
 set ttyfast

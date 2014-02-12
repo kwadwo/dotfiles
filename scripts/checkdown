@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+if curl -I https://mediacru.sh > /dev/null ^ /dev/null
+    echo "All's well"
+else
+    notify-send -u critical "MediaCrush is OFFLINE"
+end

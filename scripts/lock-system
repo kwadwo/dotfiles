@@ -1,3 +1,2 @@
 #!/bin/bash
-files=($HOME/wallpapers/*)
-i3lock -i "${files[RANDOM % ${#files[@]}]}" -t
+i3lock -i ~/wallpaper.png -t
