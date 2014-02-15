@@ -77,6 +77,8 @@ font pango:DejaVu Sans Mono 9
     # Move windows in and out of the scratchpad with mod+(shift)+t
     bindsym $mod+Shift+t move scratchpad
     bindsym $mod+t scratchpad show
+    # Cycle through border styles with mod+b
+    bindsym $mod+b border toggle
     # reload the configuration file
     bindsym $mod+Shift+c reload
     # restart i3 inplace with mod+shift+r
@@ -85,6 +87,8 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+e exec bash -c "gdialog --yesno 'Are you sure you want to exit i3?' 0 0 && i3-msg exit"
     # Run terminal with mod+enter
     bindsym $mod+Return exec sakura
+    # Ranger with mod+e
+    bindsym $mod+e exec sakura -x ranger
     # Screenshot -> mediacrush with mod+s
     bindsym $mod+s exec sleep 0.1 && scrush
     # Screenshot -> ~/screenshots with mod+shift+s
@@ -101,8 +105,6 @@ font pango:DejaVu Sans Mono 9
     bindsym XF86AudioNext exec mocp --next
     # i3-lock on mod+pause
     bindsym $mod+Pause exec lock-system
-    # Cycle through border styles with mod+b
-    bindsym $mod+b border toggle
 
 # Status bar uses custom script
 bar {

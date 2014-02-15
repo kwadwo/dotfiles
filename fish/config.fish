@@ -41,3 +41,7 @@ function fish_prompt --description 'Write out the prompt'
 
     end
 end
+
+function assemble
+    echo "$argv" | mono ~/sources/sass/sass/bin/Debug/sass.exe - - | hexdump -C
+end
