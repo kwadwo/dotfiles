@@ -86,9 +86,9 @@ font pango:DejaVu Sans Mono 9
     # exit i3 with mod+shift+e
     bindsym $mod+Shift+e exec bash -c "gdialog --yesno 'Are you sure you want to exit i3?' 0 0 && i3-msg exit"
     # Run terminal with mod+enter
-    bindsym $mod+Return exec sakura
+    bindsym $mod+Return exec urxvt
     # Ranger with mod+e
-    bindsym $mod+e exec sakura -x ranger
+    bindsym $mod+e exec urxvt -e ranger
     # Screenshot -> mediacrush with mod+s
     bindsym $mod+s exec sleep 0.1 && scrush
     # Screenshot -> ~/screenshots with mod+shift+s
@@ -130,8 +130,8 @@ workspace 4 output DVI-I-1
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id xmodmap ~/.keybindings
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec bash -c "sleep 2 && sakura -x mocp"'
-exec --no-startup-id i3-msg 'workspace 3; exec sakura -x weechat'
+exec --no-startup-id i3-msg 'workspace 2; exec bash -c "sleep 2 && urxvt -e mocp"'
+exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e weechat'
 exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
 
 # Special settings for certain apps

@@ -4,7 +4,7 @@ set -gx PATH /usr/local/cross/bin $PATH
 set -gx PATH $GOPATH $PATH
 set -gx PATH /home/sircmpwn/.gem/ruby/2.0.0/bin/ $PATH
 function parse_git_branch
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ ⎇  \1/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 end
 function fish_prompt --description 'Write out the prompt'
 
