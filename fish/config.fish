@@ -1,8 +1,8 @@
 set fish_greeting
 set EDITOR vim
-set -gx PATH /usr/local/cross/bin $PATH
 set -gx PATH $GOPATH $PATH
-set -gx PATH /home/sircmpwn/.gem/ruby/2.0.0/bin/ $PATH
+set -gx PATH $PATH /home/sircmpwn/.gem/ruby/2.0.0/bin/
+set -gx PATH $PATH /home/sircmpwn/opt/cross/bin/
 function parse_git_branch
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 end

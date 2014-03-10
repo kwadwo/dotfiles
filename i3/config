@@ -143,3 +143,4 @@ for_window [title="Super Hexagon"] floating enable
 for_window [class="Wine"] floating enable
 for_window [title="^Calculator$"] floating enable
 for_window [title=".*CLANNAD.*"] floating enable
+for_window [title="Psychonauts"] floating enable
