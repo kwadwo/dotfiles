@@ -25,3 +25,7 @@ echo -e "\n\t$(tput bold)$(tput setaf 2)== $(uname -omr) [$(cat /etc/hostname)] 
 \t$(tput setaf 4)Disk Usage:\t$(tput setaf 6)$homeSpace /home\t$dataSpace /dev/sda1\n\
 \t$(tput setaf 4)Memory:\t\t$(tput setaf 6)$mem\n\
 $(tput sgr0)"
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus

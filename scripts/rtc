@@ -1,2 +1,2 @@
 #!/bin/bash
-sakura -e "tmux attach -t rt"
+urxvt -e sh -c "tmux attach -t rt"

@@ -47,7 +47,7 @@ while true
 
     set line $line (date +"%Y-%m-%d %l:%M %p")
 
-    echo $line
+    echo -n $line
     sleep 5
     set line ""
 end

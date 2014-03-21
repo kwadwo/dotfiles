@@ -12,6 +12,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-sleuth'
+Bundle 'airblade/vim-gitgutter'
 " /Bundles
 
 filetype plugin indent on
@@ -77,3 +78,5 @@ cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root
 autocmd FileType c setlocal noet ts=4 sw=4
 autocmd FileType s setlocal noet ts=4 sw=4
 autocmd FileType go setlocal noet ts=4 sw=4
+
+highlight clear SignColumn
