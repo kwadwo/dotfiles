@@ -1,0 +1,3 @@
+#!/bin/sh
+cd $HOME/.local/share/wineprefixes/steam/drive_c/Program\ Files\ \(x86\)/Steam
+WINEPREFIX=~/.local/share/wineprefixes/steam wine steam -no-dwrite

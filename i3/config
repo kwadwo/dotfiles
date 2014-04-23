@@ -105,6 +105,8 @@ font pango:DejaVu Sans Mono 9
     bindsym XF86AudioNext exec mocp --next
     # i3-lock on mod+pause
     bindsym $mod+Pause exec lock-system
+    # Fix stupid crap
+    bindsym $mod+Shift+Pause exec xmodmap ~/.keybindings
 
 # Status bar uses custom script
 bar {

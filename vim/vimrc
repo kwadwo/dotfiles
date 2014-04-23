@@ -13,6 +13,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-sleuth'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/SyntaxRange'
 " /Bundles
 
 filetype plugin indent on
