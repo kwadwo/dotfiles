@@ -7,7 +7,6 @@ fifo=$(mktemp -u)
 fifo2=$(mktemp -u)
 mkfifo $fifo
 mkfifo $fifo2
-first=0
 
 youtube-dl --user-agent="$user_agent" \
     --cookies="$cookies_file" \
@@ -27,12 +26,7 @@ mpv --idle \
 mpv_pid=%-
 
 coproc while read -r url; do
-    if [[ $first == 0 ]]
-    then
-        first=1
-    else
-        echo "loadfile \"$url\" append" > $fifo
-    fi
+    echo "loadfile \"$url\" append" > $fifo
 done < $fifo2
 
 fg $mpv_pid
