@@ -1,6 +1,6 @@
 [ -z "$PS1" ] && return
 
-export EDITOR="vim"
+export EDITOR=vim
 PROMPT_COMMAND=__prompt_command
 PATH=$PATH:/opt/android-sdk/platform-tools/:~/.gem/ruby/2.0.0/bin
 

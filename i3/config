@@ -126,14 +126,14 @@ new_window 1pixel
 workspace 1 output HDMI-0
 workspace 2 output DVI-D-0
 workspace 3 output DVI-I-1
-workspace 4 output DVI-I-1
+workspace 4 output DP-0
 
 # Start these things when I log in, on specific workspaces
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec bash -c "sleep 2 && urxvt -e mocp"'
+exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e weechat'
-exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace 4; exec bash -c "sleep 2 && urxvt -e mocp"'
 
 # Special settings for certain apps
 for_window [class="xbmc"] floating enable

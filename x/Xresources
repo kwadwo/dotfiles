@@ -43,3 +43,5 @@ urxvt.color12:    #b6defb
 urxvt.color13:    #fba1fb
 urxvt.color14:    #d7d9fc
 urxvt.color15:    #e2e2e2
+
+Xcursor.size: 16
