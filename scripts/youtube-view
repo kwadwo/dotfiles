@@ -1,9 +1,12 @@
 #!/bin/bash
+set -m
 cookies_dir="$(mktemp -d /tmp/youtube-dl_mpv.XXXX)"
 cookies_file="${cookies_dir}/cookies"
 user_agent="$(youtube-dl --dump-user-agent)"
 fifo=$(mktemp -u)
+fifo2=$(mktemp -u)
 mkfifo $fifo
+mkfifo $fifo2
 first=0
 
 youtube-dl --user-agent="$user_agent" \
@@ -11,21 +14,29 @@ youtube-dl --user-agent="$user_agent" \
     --netrc \
     --get-url \
     --ignore-errors \
-    "$1" | while read url; do
+    "$1" > $fifo2 &
+
+read -r url < $fifo2
+
+mpv --idle \
+    --input-file $fifo \
+    --cookies \
+    --cookies-file="$cookies_file" \
+    --user-agent="$user_agent" \
+    "$url" &
+mpv_pid=%-
+
+coproc while read -r url; do
     if [[ $first == 0 ]]
     then
-        mpv --idle \
-            --input-file $fifo \
-            --no-consolecontrols \
-            --cookies \
-            --cookies-file="$cookies_file" \
-            --user-agent="$user_agent" \
-            "$url" &
         first=1
     else
         echo "loadfile \"$url\" append" > $fifo
     fi
-done
+done < $fifo2
+
+fg $mpv_pid
 
 rm $fifo
+rm $fifo2
 rm -rf "$cookies_dir"
