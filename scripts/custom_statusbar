@@ -42,8 +42,8 @@ while true
     if moc_is_playing
         info "♫" (get_nowplaying)
     end
-    info "✔ home" (df -l | sed -nr "s/\/dev\/sda2.*([0-9]{2}%).*/\1/p")
-    info "✔ sda1" (df -l | sed -nr "s/\/dev\/sda1.*([0-9]{2}%).*/\1/p")
+    info "✔ root" (df -l | sed -nr "s/\/dev\/mapper\/cryptroot.*([0-9]{2}%).*/\1/p")
+    info "✔ home" (df -l | sed -nr "s/\/dev\/mapper\/crypthome.*([0-9]{2}%).*/\1/p")
 
     set line $line (date +"%Y-%m-%d %l:%M %p")
 

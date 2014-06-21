@@ -1,0 +1,5 @@
+#!/bin/bash
+until ping -W 1 -c 1 8.8.8.8; do
+    echo "waiting..."
+done
+weechat

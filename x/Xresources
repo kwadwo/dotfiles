@@ -1,47 +1,49 @@
+Xcursor.size: 16
 URxvt.scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=10
 URxvt.depth: 32
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.perl-ext-common: default,matcher,vtwheel
-URxvt.foreground: #CCCCCC
-URxvt.background: [90]#4B5D7E
-! Normal
-! color0    black
-! color1    red
-! color2    green
-! color3    yellow
-! color4    blue
-! color5    purple
-! color6    cyan
-! color7    white
 
-urxvt.color0:    #6c6c6c
-urxvt.color1:    #e9897c
-urxvt.color2:    #b6e77d
-urxvt.color3:    #ecebbe
-urxvt.color4:    #a9cdeb
-urxvt.color5:    #ea96eb
-urxvt.color6:    #c9caec
-urxvt.color7:    #CCCCCC
+! Base16 Chalk
+! ! Scheme: Chris Kempson (http://chriskempson.com)
 
-! Light
-! color8     black
-! color9     red
-! color10    green
-! color11    yellow
-! color12    blue
-! color13    purple
-! color14    cyan
-! color15    white
+#define base00 #3B3228
+#define base01 #534636
+#define base02 #645240
+#define base03 #7e705a
+#define base04 #b8afad
+#define base05 #d0c8c6
+#define base06 #e9e1dd
+#define base07 #f5eeeb
+#define base08 #cb6077
+#define base09 #d28b71
+#define base0A #f4bc87
+#define base0B #beb55b
+#define base0C #7bbda4
+#define base0D #8ab3b5
+#define base0E #a89bb9
+#define base0F #bb9584
 
-urxvt.color8:     #747474
-urxvt.color9:     #f99286
-urxvt.color10:    #c3f786
-urxvt.color11:    #fcfbcc
-urxvt.color12:    #b6defb
-urxvt.color13:    #fba1fb
-urxvt.color14:    #d7d9fc
-urxvt.color15:    #e2e2e2
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+*.color8:       base03
+*.color9:       base09
+*.color10:      #756a5e
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
 
-Xcursor.size: 16
+URxvt.background: [90]#3B3228

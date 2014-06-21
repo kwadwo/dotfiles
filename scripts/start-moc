@@ -1,0 +1,6 @@
+#!/bin/sh
+until pulseaudio --check; do
+  echo "waiting..."
+  sleep 1
+done
+padsp mocp

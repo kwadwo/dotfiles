@@ -4,5 +4,5 @@ then
     echo "xbmc running, ignoring key"
 else
     mocp -P
-    xbmc
+    i3-msg workspace 4 && xbmc
 fi

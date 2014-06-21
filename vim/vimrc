@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 set shell=bash
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Bundles
@@ -56,6 +56,9 @@ set smartcase
 set incsearch
 set showmatch
 set hlsearch
+
+" Resize windows and move tabs and such with the mouse
+set mouse=a
 
 " Don't litter swp files everywhere
 set backupdir=~/.vim/.backup

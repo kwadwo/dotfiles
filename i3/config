@@ -132,8 +132,8 @@ workspace 4 output DP-0
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e weechat'
-exec --no-startup-id i3-msg 'workspace 4; exec bash -c "sleep 2 && urxvt -e mocp"'
+exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e start-weechat'
+exec --no-startup-id i3-msg 'workspace 4; exec urxvt -e start-moc'
 
 # Special settings for certain apps
 for_window [class="xbmc"] floating enable

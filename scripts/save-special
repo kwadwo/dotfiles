@@ -7,5 +7,6 @@ fi
 if [[ $1 == magnet:* ]]
 then
   notify-send "Added magnet link to rTorrent"
-  xmlrpc local.rtorrent load_start "$1"
+  
+  xmlrpc local.rtorrent load_start "$(echo "$1" | sed -re "s/:/\\\\:/g")"
 fi
