@@ -14,6 +14,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-sleuth'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/SyntaxRange'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 " /Bundles
 
 filetype plugin indent on
@@ -84,3 +86,5 @@ autocmd FileType s setlocal noet ts=4 sw=4
 autocmd FileType go setlocal noet ts=4 sw=4
 
 highlight clear SignColumn
+autocmd vimenter * NERDTreeTabsOpen
+autocmd vimenter * wincmd l

@@ -5,8 +5,8 @@
 # scgi (I run this on nginx)
 encoding_list = UTF-8
 scgi_local = ~/.rtorrent/scgi.socket
-execute = chmod,ug=rw\,o=,~/.rtorrent/scgi.socket
-execute = chgrp,http,~/.rtorrent/scgi.socket
+execute = sudo,chmod,ug=rw\,o=,~/.rtorrent/scgi.socket
+execute = sudo,chgrp,http,~/.rtorrent/scgi.socket
 
 # Maximum and minimum number of peers to connect to per torrent.
 #min_peers = 40

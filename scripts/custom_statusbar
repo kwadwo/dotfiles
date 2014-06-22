@@ -5,7 +5,7 @@ function info
     set line $line "|"
 end
 function get_torrents
-    xmlrpc local.rtorrent download_list | grep "String" | sed -re "s/.*String: '([0-9A-F]+)'/\1/"
+    xmlrpc rtorrent download_list | grep "String" | sed -re "s/.*String: '([0-9A-F]+)'/\1/"
 end
 function get_downloading
     set torrents (get_torrents)
