@@ -36,6 +36,9 @@ let g:airline#extensions#whitespace#symbol = 'Ξ'
 
 let g:vim_markdown_folding_disabled=1
 
+let g:nerdtree_tabs_smart_startup_focus=1
+let g:nerdtree_tabs_open_on_console_startup=1
+
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -86,5 +89,3 @@ autocmd FileType s setlocal noet ts=4 sw=4
 autocmd FileType go setlocal noet ts=4 sw=4
 
 highlight clear SignColumn
-autocmd vimenter * NERDTreeTabsOpen
-autocmd vimenter * wincmd l
