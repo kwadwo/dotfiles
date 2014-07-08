@@ -11,7 +11,7 @@ exec xset s off &
 exec xset -dpms &
 exec xrdb -merge ~/.Xresources &
 exec autocutsel -fork &
-exec autocutsel -selection PRIMARY -fork &
+exec autocutsel -fork -selection PRIMARY &
 exec pulseaudio --start &
 exec dunst &
 exec compton &

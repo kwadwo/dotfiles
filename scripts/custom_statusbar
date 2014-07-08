@@ -11,7 +11,7 @@ function get_downloading
     set torrents (get_torrents)
     set incomplete 0
     for torrent in $torrents
-        if test 0 -eq (xmlrpc local.rtorrent d.get_complete $torrent | grep "integer" | sed -re "s/64-bit integer: ([0-9]+)\$/\1/")
+        if test 0 -eq (xmlrpc rtorrent d.get_complete $torrent | grep "integer" | sed -re "s/64-bit integer: ([0-9]+)\$/\1/")
             set incomplete (math $incomplete + 1)
         end
     end

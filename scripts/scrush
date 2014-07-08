@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-scrot -s /tmp/scrot.png;
+escrotum -s /tmp/scrot.png;
 json=$(curl -F file=@/tmp/scrot.png\;type=image/png https://mediacru.sh/api/upload/file)
 hash=$( echo "$json" | grep "hash" | cut -d '"' -f4)
 echo -n https://mediacru.sh/$hash | xclip -sel clip
