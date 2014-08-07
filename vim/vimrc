@@ -118,4 +118,5 @@ nnoremap <leader>dc :OmniSharpDocumentation<cr>
 autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuildAsync<cr>
 let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_filetype_blacklist = { 'asm': 1 }
 set completeopt-=preview
