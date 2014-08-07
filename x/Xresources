@@ -44,8 +44,12 @@ URxvt*.color19:      base02
 URxvt*.color20:      base04
 URxvt*.color21:      base06
 
-URxvt.scrollBar: false
+Xcursor.size: 16
 URxvt.background: [80]#000000
 URxvt.urgentOnBell: true
+URxvt.scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=10
 URxvt.depth: 32
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,vtwheel
