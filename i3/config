@@ -10,6 +10,7 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+q kill
     # Toggle fullscreen with mod+f
     bindsym $mod+f fullscreen
+    bindsym $mod+Escape exec xkill
     # change focus with mod+hjkl or mod+arrow
     bindsym $mod+h focus left
     bindsym $mod+j focus down
@@ -95,6 +96,8 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+s exec sleep 0.1 && takeselection
     # dmenu with mod+d for arbituary programs
     bindsym $mod+d exec dmenu_run
+    # dmenu with mod+shift+d for arbituary REMOTE programs on my work laptop
+    bindsym $mod+shift+d exec remote_dmenu
     # volume controls (special keys on keyboard)
     bindsym XF86AudioMute exec pa-adjust mute
     bindsym XF86AudioLowerVolume exec pa-adjust minus

@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -XC 192.168.1.3 dmenu_path | dmenu "$@" | xargs ssh -XC 192.168.1.3
