@@ -15,7 +15,6 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/SyntaxRange'
 Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'nosami/Omnisharp'
 Bundle 'tpope/vim-dispatch'
 Bundle 'kien/ctrlp.vim'
@@ -40,9 +39,6 @@ let g:airline#extensions#paste#symbol = '∥'
 let g:airline#extensions#whitespace#symbol = 'Ξ'
 
 let g:vim_markdown_folding_disabled=1
-
-let g:nerdtree_tabs_smart_startup_focus=1
-let g:nerdtree_tabs_open_on_console_startup=1
 
 set encoding=utf-8
 set tabstop=4
@@ -78,6 +74,7 @@ syntax on
 let mapleader = "\<space>"
 nnoremap \\ :noh<cr> " Clear higlighting
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
+nnoremap cc :center<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 inoremap <F1> <ESC>
@@ -92,6 +89,7 @@ cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root
 autocmd FileType c setlocal noet ts=4 sw=4
 autocmd FileType s setlocal noet ts=4 sw=4
 autocmd FileType go setlocal noet ts=4 sw=4
+autocmd FileType hy setlocal set filetype=lisp
 
 highlight clear SignColumn
 
@@ -120,3 +118,10 @@ let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_filetype_blacklist = { 'asm': 1 }
 set completeopt-=preview
+
+" Printer
+let &printexpr="(v:cmdarg=='' ? ".
+    \"system('lpr' . (&printdevice == '' ? '' : ' -P' . &printdevice)".
+    \". ' ' . v:fname_in) . delete(v:fname_in) + v:shell_error".
+    \" : system('mv '.v:fname_in.' '.v:cmdarg) + v:shell_error)"
+set printoptions=formfeed:y

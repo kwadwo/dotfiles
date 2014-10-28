@@ -5,8 +5,10 @@ set -gx PATH $PATH /home/sircmpwn/.gem/ruby/2.0.0/bin/
 set -gx PATH $PATH /home/sircmpwn/.gem/ruby/2.1.0/bin/
 set -gx PATH $PATH /home/sircmpwn/opt/cross/bin/
 set -gx PATH $PATH /opt/android-sdk/tools/
+set -gx PATH $PATH /opt/cross/bin/
 set -gx PATH $PATH /home/sircmpwn/ndless-toolchain/bin
 set -gx PATH $PATH /home/sircmpwn/sources/Ndless/Ndless-SDK/ndless/bin
+set -gx PATH $PATH /home/sircmpwn/sources/z80e/frontends/sdl/bin/
 function parse_git_branch
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 end

@@ -40,6 +40,7 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
+    bindsym $mod+Tab workspace windows
     # move container to workspace with meta+shift+1234567890
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -51,6 +52,7 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+Tab move container to workspace windows
     # vim-style window splits and resizing after hitting mod+w
     mode "window" {
         # TODO: Send a patch to i3 that lets me do mod+w, mod+v or whatever
@@ -65,6 +67,9 @@ font pango:DejaVu Sans Mono 9
         bindsym Escape mode "default"
     }
     bindsym $mod+w mode "window"
+    # Opacity
+    bindsym $mod+o exec compton-trans -c +5
+    bindsym $mod+p exec compton-trans -c -5
     # Change layouts with mod+,./
     bindsym $mod+comma layout stacking
     bindsym $mod+period layout tabbed
@@ -123,7 +128,7 @@ bar {
 # Some simple personal preferences
 hide_edge_borders both
 workspace_layout stacked
-new_window 1pixel
+new_window pixel
 
 # Set default workspaces on specific displays
 workspace 1 output HDMI-0
@@ -148,3 +153,5 @@ for_window [class="Wine"] floating enable
 for_window [title="^Calculator$"] floating enable
 for_window [title=".*CLANNAD.*"] floating enable
 for_window [title="Psychonauts"] floating enable
+for_window [title="^z80e$"] floating enable
+for_window [title="^File Operation Progress$"] floating enable
