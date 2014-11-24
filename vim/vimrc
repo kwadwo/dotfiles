@@ -6,20 +6,21 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Bundles
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-sleuth'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'vim-scripts/SyntaxRange'
-Bundle 'scrooloose/nerdtree'
-Bundle 'nosami/Omnisharp'
-Bundle 'tpope/vim-dispatch'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-sleuth'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nosami/Omnisharp'
+Plugin 'tpope/vim-dispatch'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'cespare/vim-toml'
 " /Bundles
 
 filetype plugin indent on
@@ -87,6 +88,7 @@ cmap w!! %!sudo tee > /dev/null % " use w!! to write file as root
 
 " Various file formats
 autocmd FileType c setlocal noet ts=4 sw=4
+autocmd FileType h setlocal noet ts=4 sw=4
 autocmd FileType s setlocal noet ts=4 sw=4
 autocmd FileType go setlocal noet ts=4 sw=4
 autocmd FileType hy setlocal set filetype=lisp
@@ -125,3 +127,15 @@ let &printexpr="(v:cmdarg=='' ? ".
     \". ' ' . v:fname_in) . delete(v:fname_in) + v:shell_error".
     \" : system('mv '.v:fname_in.' '.v:cmdarg) + v:shell_error)"
 set printoptions=formfeed:y
+
+hi Search ctermbg=12
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+highlight NonText ctermfg=darkgrey
+highlight SpecialKey ctermfg=darkgrey
+
+autocmd bufwritepost .vimrc source $MYVIMRC

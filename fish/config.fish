@@ -1,5 +1,5 @@
 set fish_greeting
-set EDITOR vim
+set -gx EDITOR vim
 set -gx PATH $GOPATH $PATH
 set -gx PATH $PATH /home/sircmpwn/.gem/ruby/2.0.0/bin/
 set -gx PATH $PATH /home/sircmpwn/.gem/ruby/2.1.0/bin/
@@ -8,7 +8,10 @@ set -gx PATH $PATH /opt/android-sdk/tools/
 set -gx PATH $PATH /opt/cross/bin/
 set -gx PATH $PATH /home/sircmpwn/ndless-toolchain/bin
 set -gx PATH $PATH /home/sircmpwn/sources/Ndless/Ndless-SDK/ndless/bin
-set -gx PATH $PATH /home/sircmpwn/sources/z80e/frontends/sdl/bin/
+set -gx PATH $PATH /home/sircmpwn/sources/KnightOS/z80e/frontends/sdl/bin/
+set -gx PATH $PATH /home/sircmpwn/sources/KnightOS/z80e/frontends/tui/bin/
+set -gx PATH $PATH /home/sircmpwn/sources/KnightOS/kcc/bin/
+set -gx PATH $PATH /home/sircmpwn/sources/KnightOS/scas/bin/
 function parse_git_branch
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 end

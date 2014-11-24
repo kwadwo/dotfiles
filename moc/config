@@ -69,12 +69,12 @@
 #
 # Example:    MusicDir = "/home/joe/music"
 #
-MusicDir = /home/sircmpwn/Music/
+MusicDir = /var/music
 
 # Start in the music directory by default?  If set to 'no', start
 # in the current directory by default.  A single directory on
 # the command line takes precedence.
-StartInMusicDir = no
+StartInMusicDir = yes
 
 # How to sort?  FileName is the option's only value for now.
 #Sort = FileName
@@ -87,7 +87,7 @@ StartInMusicDir = no
 #MP3IgnoreCRCErrors = yes
 
 # Set playback toggles.
-Repeat = no
+Repeat = yes
 Shuffle = yes
 AutoNext = yes
 
@@ -172,7 +172,7 @@ SoundDriver = OSS:ALSA:JACK
 # Show file time in menu?  Possible values: 'yes', 'no' and 'IfAvailable'
 # (meaning show the time only when it is already known, which often works
 # faster).
-#ShowTime = IfAvailable
+ShowTime = yes
 
 # Show time played as a percentage in the time progress bar.
 #ShowTimePercent = no

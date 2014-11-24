@@ -1,22 +1,22 @@
 #!/bin/sh
-export TERMINAL=urxvt
-export GOPATH=$HOME/go
-export EDITOR=vim
-PATH=$PATH:$HOME:$HOME/bin:$HOME/sources/dotfiles/scripts/:$GOPATH/bin
+
+PATH=$PATH:$HOME:$HOME/bin:$HOME/sources/dotfiles/scripts/
+
 source /etc/X11/xinit/xinitrc.d/30-dbus
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
-#exec ibus-daemon --xim &
-exec xset s off &
-exec xset -dpms &
-exec xrdb -merge ~/.Xresources &
-exec autocutsel -fork &
-exec autocutsel -fork -selection PRIMARY &
-exec pulseaudio --start &
-exec dunst &
-exec compton &
-exec irexec &
-exec pasystray &
-exec skype &
-exec xmodmap ~/.keybindings &
-exec i3
+
+xset s off                                  &
+xset -dpms                                  &
+xrdb -merge ~/.Xresources                   &
+autocutsel -fork                            &
+autocutsel -fork -selection PRIMARY         &
+pulseaudio --start                          &
+dunst                                       &
+irexec                                      &
+pasystray                                   &
+skype                                       &
+dropboxd                                    &
+xmodmap ~/.keybindings                      &
+
+i3
