@@ -67,9 +67,6 @@ font pango:DejaVu Sans Mono 9
         bindsym Escape mode "default"
     }
     bindsym $mod+w mode "window"
-    # Opacity
-    bindsym $mod+o exec compton-trans -c +5
-    bindsym $mod+p exec compton-trans -c -5
     # Change layouts with mod+,./
     bindsym $mod+comma layout stacking
     bindsym $mod+period layout tabbed
@@ -103,6 +100,8 @@ font pango:DejaVu Sans Mono 9
     bindsym $mod+d exec dmenu_run -p "Run:" -l 10
     # dmenu with mod+shift+d for arbituary REMOTE programs on my work laptop
     bindsym $mod+shift+d exec remote_dmenu
+    # passwords
+    bindsym $mod+p exec pass-dmenu
     # volume controls (special keys on keyboard)
     bindsym XF86AudioMute exec pa-adjust mute
     bindsym XF86AudioLowerVolume exec pa-adjust minus
