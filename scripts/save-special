@@ -1,12 +1,12 @@
 #!/bin/bash
 if [[ $1 == *.torrent ]]
 then
-  notify-send "Added $(basename "$1") to rTorrent"
+  notify-send "Added $(basename "$1") to Transmission"
   mv "$1" ~/torrents/
 fi
 if [[ $1 == magnet:* ]]
 then
-  notify-send "Added magnet link to rTorrent"
+  notify-send "Added magnet link to Transmission"
   
-  xmlrpc rtorrent load_start "$(echo "$1" | sed -re "s/:/\\\\:/g")"
+  transmission-qt "$1"
 fi

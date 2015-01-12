@@ -16,7 +16,10 @@ dunst                                       &
 irexec                                      &
 pasystray                                   &
 skype                                       &
+qtox                                        &
 dropboxd                                    &
+transmission-qt                             &
 xmodmap ~/.keybindings                      &
+redshift-gtk                                &
 
 i3

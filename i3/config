@@ -100,7 +100,7 @@ font pango:DejaVu Sans Mono 9
     # Screenshot -> ~/screenshots with mod+shift+s
     bindsym $mod+Shift+s exec sleep 0.1 && takeselection
     # dmenu with mod+d for arbituary programs
-    bindsym $mod+d exec dmenu_run
+    bindsym $mod+d exec dmenu_run -p "Run:" -l 10
     # dmenu with mod+shift+d for arbituary REMOTE programs on my work laptop
     bindsym $mod+shift+d exec remote_dmenu
     # volume controls (special keys on keyboard)
@@ -116,7 +116,7 @@ font pango:DejaVu Sans Mono 9
     bindsym XF86AudioPlay exec mocp --toggle-pause
     bindsym XF86AudioNext exec mocp --next
     # i3-lock on mod+pause
-    bindsym $mod+Pause exec lock-system
+    bindsym XF86Sleep exec lock-system
     # Fix stupid crap
     bindsym $mod+Shift+Pause exec xmodmap ~/.keybindings
 
@@ -158,14 +158,14 @@ workspace 4 output DP-0
 
 # Start these things when I log in, on specific workspaces
 exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox-developer'
 exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e start-weechat'
 exec --no-startup-id i3-msg 'workspace 4; exec urxvt -e start-moc'
 
 # Special settings for certain apps
-for_window [class="xbmc"] floating enable
-for_window [class="xbmc"] fullscreen
+for_window [class="Kodi"] floating enable
+for_window [class="Kodi"] fullscreen
 for_window [title="Thomas Was Alone"] floating enable
 for_window [title="Thomas Was Alone"] fullscreen
 for_window [title="Super Hexagon"] floating enable
@@ -175,4 +175,5 @@ for_window [title=".*CLANNAD.*"] floating enable
 for_window [title="Psychonauts"] floating enable
 for_window [title="^z80e$"] floating enable
 for_window [title="^File Operation Progress$"] floating enable
+for_window [title="^MonoDevelop External Console$"] floating enable
 for_window [title="^QEMU$"] floating enable

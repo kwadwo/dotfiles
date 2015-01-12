@@ -1,0 +1,3 @@
+#!/bin/bash
+target=$(find ~/.password-store/ | sed -re "s/\.gpg$//" | sed -re "s/^.*\/.password-store\///" | dmenu -l 5 -nb \#FF004F)
+pass -c $target

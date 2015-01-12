@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mpv "$*"
+exit
+
 # This script plays videos from a number of websites in mpv, 
 # including YouTube, Vimeo, SoundCloud, etc
 # 
@@ -16,7 +19,6 @@ mkfifo $fifo2
 
 youtube-dl --user-agent="$user_agent" \
     --cookies="$cookies_file" \
-    --netrc \
     --get-url \
     --ignore-errors \
     "$1" > $fifo2 &
