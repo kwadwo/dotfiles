@@ -11,15 +11,15 @@ xset -dpms                                  &
 xrdb -merge ~/.Xresources                   &
 autocutsel -fork                            &
 autocutsel -fork -selection PRIMARY         &
-pulseaudio --start                          &
 dunst                                       &
 irexec                                      &
+pulseaudio --start                          &
 pasystray                                   &
 skype                                       &
 qtox                                        &
 dropboxd                                    &
 transmission-qt                             &
 xmodmap ~/.keybindings                      &
-redshift-gtk                                &
+xinput --map-to-output 12 HDMI-0            &
 
 i3

@@ -53,3 +53,4 @@ URxvt.depth: 24
 URxvt.url-launcher: /usr/bin/firefox-developer
 URxvt.matcher.button: 1
 URxvt.perl-ext-common: default,matcher,vtwheel
+URxvt.internalBorder: 30

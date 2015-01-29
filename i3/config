@@ -130,7 +130,7 @@ bar {
 
 # Some simple personal preferences
 hide_edge_borders both
-new_window pixel
+new_window pixel 1
 set $bg #1D1A18
 set $fg #9f9f9f
 set $hi #efef8f
@@ -176,3 +176,4 @@ for_window [title="^z80e$"] floating enable
 for_window [title="^File Operation Progress$"] floating enable
 for_window [title="^MonoDevelop External Console$"] floating enable
 for_window [title="^QEMU$"] floating enable
+for_window [title="^.*MonoGame.*$"] floating enable

@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 escrotum -s /tmp/scrot.png;
-json=$(curl -F file=@/tmp/scrot.png\;type=image/png https://mediacru.sh/api/upload/file)
-hash=$( echo "$json" | grep "hash" | cut -d '"' -f4)
-echo -n https://mediacru.sh/$hash | xclip -sel clip
-notify-send "Upload complete:\nhttps://mediacru.sh/$hash"
-xdg-open https://mediacru.sh/$hash
+json=$(curl -F "files[]"=@/tmp/scrot.png https://pomf.se/upload.php)
+path=$( echo "$json" | jq -r .files[0].url)
+echo -n https://a.pomf.se/$path | xclip -sel clip
+notify-send "Upload complete:\nhttps://a.pomf.se/$path"
+xdg-open https://a.pomf.se/$path
